@@ -36,13 +36,40 @@ const collectionDataUpdater = new CollectionDataUpdater(
    * a private folder to a public one.
    */
   [
-    // Order is respected, so you should update your assets before the metadata.
     new S3BasicFileDataUpdater(
       "Asset",
       s3Config,
-      config.PRIVATE_ASSETS_PATH,
+      config.PRIVATE_ASSETS_PATH + "/png",
       config.PUBLIC_ASSETS_PATH,
       config.ASSETS_EXTENSION,
+    ),
+    new S3BasicFileDataUpdater(
+      "GLBAsset",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/glb",
+      config.PUBLIC_ASSETS_PATH,
+      ".glb",
+    ),
+    new S3BasicFileDataUpdater(
+      "VRMAsset",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/vrm",
+      config.PUBLIC_ASSETS_PATH,
+      ".vrm",
+    ),
+    new S3BasicFileDataUpdater(
+      "FBXAsset",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/fbx",
+      config.PUBLIC_ASSETS_PATH,
+      ".fbx",
+    ),
+    new S3BasicFileDataUpdater(
+      "USDZAsset",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/usdz",
+      config.PUBLIC_ASSETS_PATH,
+      ".usdz",
     ),
     new S3BasicNftMetadataDataUpdater(
       "Metadata",
@@ -64,7 +91,7 @@ const collectionDataUpdater = new CollectionDataUpdater(
    * events or timers.
    */
   [
-    new UpdateAllTokensEveryNSecondsRuntime(parseInt(config.FULL_REFRESH_DELAY)),
+    // new UpdateAllTokensEveryNSecondsRuntime(parseInt(config.FULL_REFRESH_DELAY)),
     new UpdateTokenOnMintRuntime(contract),
   ],
 );
