@@ -127,6 +127,13 @@ const collectionDataUpdater = new CollectionDataUpdater(
       config.PUBLIC_ASSETS_PATH + "/extras/winter/usdz",
       ".usdz",
     ),
+    new S3BasicFileDataUpdater(
+      "FBXDrone",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/extras/drone/fbx",
+      config.PUBLIC_ASSETS_PATH + "/extras/drone/fbx",
+      ".fbx",
+    ),
     new S3BasicNftMetadataDataUpdater(
       "Metadata",
       s3Config,
