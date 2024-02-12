@@ -134,6 +134,20 @@ const collectionDataUpdater = new CollectionDataUpdater(
       config.PUBLIC_ASSETS_PATH + "/extras/drone/fbx",
       ".fbx",
     ),
+    new S3BasicFileDataUpdater(
+      "GLBDrone",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/extras/drone/glb",
+      config.PUBLIC_ASSETS_PATH + "/extras/drone/glb",
+      ".glb",
+    ),
+    new S3BasicFileDataUpdater(
+      "USDZDrone",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/extras/drone/usdz",
+      config.PUBLIC_ASSETS_PATH + "/extras/drone/usdz",
+      ".usdz",
+    ),
     new S3BasicNftMetadataDataUpdater(
       "Metadata",
       s3Config,
