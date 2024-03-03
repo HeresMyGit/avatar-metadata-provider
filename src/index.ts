@@ -148,6 +148,20 @@ const collectionDataUpdater = new CollectionDataUpdater(
       config.PUBLIC_ASSETS_PATH + "/extras/drone/usdz",
       ".usdz",
     ),
+    new S3BasicFileDataUpdater(
+      "GLBChrome",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/extras/chrome/glb",
+      config.PUBLIC_ASSETS_PATH + "/extras/chrome/glb",
+      ".glb",
+    ),
+    new S3BasicFileDataUpdater(
+      "USDZChrome",
+      s3Config,
+      config.PRIVATE_ASSETS_PATH + "/extras/chrome/usdz",
+      config.PUBLIC_ASSETS_PATH + "/extras/chrome/usdz",
+      ".usdz",
+    ),
     new S3BasicNftMetadataDataUpdater(
       "Metadata",
       s3Config,
