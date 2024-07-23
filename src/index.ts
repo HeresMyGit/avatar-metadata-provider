@@ -81,7 +81,7 @@ const collectionDataUpdater = new CollectionDataUpdater(
   ],
 );
 
-collectionDataUpdater.start();
+// collectionDataUpdater.start();
 
 const rl = readline.createInterface({
   input: process.stdin,
